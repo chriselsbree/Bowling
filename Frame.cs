@@ -19,10 +19,16 @@ public class Frame
     public int TotalScore => FrameScore + PreviousScore;
     public int FrameScore => roll1 + roll2 + roll3;
     public bool IsSpare => roll1 + roll2 == 10;
+    public bool IsStrike => 10 == roll1;
 
     public override string ToString()
     {
-        return $"Frame {frameIndex}: {roll1}, {roll2} ; FrameScore: {FrameScore} ; TotalScore: {TotalScore}";
+        return $"Frame {frameIndex}: {PrintFrameScore} ; FrameScore: {FrameScore} ; TotalScore: {TotalScore}";
+    }
+
+    public string PrintFrameScore
+    {
+        get { return IsStrike ? "10" : $"{roll1}, {roll2}"; }
     }
 
     public void AddRoll(int roll3)
