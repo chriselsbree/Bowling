@@ -6,6 +6,7 @@ public class Frame
     private int roll2;
     private int frameIndex;
     private int PreviousScore;
+    private int roll3;
 
     public Frame(int frameIndex, int previousScore, int roll1, int roll2)
     {
@@ -16,10 +17,16 @@ public class Frame
     }
 
     public int TotalScore => FrameScore + PreviousScore;
-    public int FrameScore => roll1 + roll2;
+    public int FrameScore => roll1 + roll2 + roll3;
+    public bool IsSpare => roll1 + roll2 == 10;
 
     public override string ToString()
     {
         return $"Frame {frameIndex}: {roll1}, {roll2} ; FrameScore: {FrameScore} ; TotalScore: {TotalScore}";
+    }
+
+    public void AddRoll(int roll3)
+    {
+        this.roll3 = roll3;
     }
 }
