@@ -8,9 +8,15 @@ public class BowlingGame
 
     public void Roll(params int[] rolls)
     {
-        _frames.Add(new Frame(1, 0, rolls[0], rolls[1]));
-        _frames.Add(new Frame(2, _frames.Last().TotalScore, rolls[2], rolls[3]));
-        _frames.Add(new Frame(3, _frames.Last().TotalScore, rolls[4], rolls[5]));
+        var previousScore = 0;
+        var rollIndex = 0;
+
+        for (int i = 0; i < 3; i++)
+        {
+            _frames.Add(new Frame(i+1, previousScore, rolls[rollIndex], rolls[rollIndex + 1]));
+            rollIndex += 2;
+            previousScore = _frames.Last().TotalScore;
+        }
 
     }
 
