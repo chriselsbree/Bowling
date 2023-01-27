@@ -11,7 +11,7 @@ public class BowlingGame
         var previousScore = 0;
         var rollIndex = 0;
 
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 10; i++)
         {
             _frames.Add(new Frame(i+1, previousScore, rolls[rollIndex], rolls[rollIndex + 1]));
             if (_frames.Last().IsSpare)

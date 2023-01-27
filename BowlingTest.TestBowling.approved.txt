@@ -6,3 +6,5 @@ Frame 5: 3, 6 ; FrameScore: 9 ; TotalScore: 41
 Frame 6: 8, 2 ; FrameScore: 11 ; TotalScore: 52
 Frame 7: 1, 2 ; FrameScore: 3 ; TotalScore: 55
 Frame 8: 10 ; FrameScore: 15 ; TotalScore: 70
+Frame 9: 2, 3 ; FrameScore: 5 ; TotalScore: 75
+Frame 10: 10, 10, 6 ; FrameScore: 26 ; TotalScore: 101

@@ -28,7 +28,16 @@ public class Frame
 
     public string PrintFrameScore
     {
-        get { return IsStrike ? "10" : $"{roll1}, {roll2}"; }
+        //if last frame and a strike of a spare
+        //return all rolls
+        get
+        {
+            if(frameIndex == 10 && (IsStrike || IsSpare))
+            {
+                return $"{roll1}, {roll2}, {roll3}";
+            }
+            return IsStrike ? "10" : $"{roll1}, {roll2}";
+        }
     }
 
     public void AddRoll(int roll3)
