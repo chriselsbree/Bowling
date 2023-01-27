@@ -13,6 +13,8 @@ public class BowlingGame
 
     public override string ToString()
     {
-        return $"Frame 1: {roll1}, {roll2}";
+        return $"Frame 1: {roll1}, {roll2} ; FrameScore: {FrameScore}";
     }
+
+    public int FrameScore => roll1 + roll2;
 }
