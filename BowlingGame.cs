@@ -1,37 +1,17 @@
 namespace Bowling;
 
-public class Frame
-{
-    private int roll1;
-    private int roll2;
-
-    public Frame(int roll1, int roll2)
-    {
-        this.roll1 = roll1;
-        this.roll2 = roll2;
-    }
-
-    public int TotalScore => FrameScore;
-    public int FrameScore => roll1 + roll2;
-
-    public string ToString()
-    {
-        return $"Frame 1: {roll1}, {roll2} ; FrameScore: {FrameScore} ; TotalScore: {TotalScore}";
-    }
-}
-
 public class BowlingGame
 {
-    private Frame _frame;
+    private List<Frame> _frames = new List<Frame>();
 
     public void Roll(params int[] rolls)
     {
-        _frame = new Frame(rolls[0], rolls[1]);
+        _frames.Add(new Frame(rolls[0], rolls[1]));
 
     }
 
     public override string ToString()
     {
-        return _frame.ToString();
+        return _frames.First().ToString();
     }
 }
