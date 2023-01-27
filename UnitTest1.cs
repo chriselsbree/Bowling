@@ -1,14 +1,20 @@
+using ApprovalTests;
+using ApprovalTests.Core;
+using ApprovalTests.Reporters;
 using NuGet.Frameworks;
 
-namespace FizzBuzz2
+namespace Bowling
 {
+    [UseReporter(typeof(VisualStudioReporter))]
     [TestClass]
-    public class UnitTest1
+    public class BowlingTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestBowling()
         {
-            Assert.IsTrue(true);
+            var game = new BowlingGame();
+            game.Roll(5, 4, 4, 3, 1, 2, 4, 6, 3, 6, 8, 2, 1, 2, 10, 2, 3, 10, 10, 6);
+            Approvals.Verify(game);   
         }
     }
 }
